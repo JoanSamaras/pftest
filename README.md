@@ -82,4 +82,11 @@ The dashboard should include the following UI components (you may add more if th
 
 ## Goal
 Deliver a clean, responsive, and user-friendly dashboard that effectively visualizes and manages Disney character data using modern React practices.
+
+---
+---
+
+## Technical Notes
+- How to start the application: ``npm run dev``
+
 ```
