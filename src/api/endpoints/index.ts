@@ -1,5 +1,5 @@
-import { Endpoints } from "./types";
+import { Endpoints } from './types';
 
 export const endpoints: Endpoints = {
-  allCharacters: "/character"
+  allCharacters: '/character',
 };

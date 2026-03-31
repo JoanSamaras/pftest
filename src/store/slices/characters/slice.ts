@@ -5,7 +5,7 @@ import { CharactersState } from './types';
 const initialState: CharactersState = {
   data: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 export const charactersSlice = createSlice({

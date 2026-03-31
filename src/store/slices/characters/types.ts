@@ -7,7 +7,7 @@ type Character = {
   videoGames: string[];
   allies: string[];
   enemies: string[];
-}
+};
 
 type CharactersResponse = {
   count: number;
@@ -15,12 +15,12 @@ type CharactersResponse = {
   nextPage: string | null;
   previousPage: string | null;
   data: Character[];
-}
+};
 
 type CharactersState = {
   data: Character[];
   loading: boolean;
   error: string | null;
-}
+};
 
 export type { Character, CharactersResponse, CharactersState };
