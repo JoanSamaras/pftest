@@ -6,3 +6,11 @@ export const axiosClient = axios.create({
     'Content-Type': 'application/json',
   },
 });
+
+axiosClient.interceptors.response.use(
+  (response: any) => response,
+  (error: any) => {
+    console.error("API Error:", error);
+    return Promise.reject(error);
+  }
+);
