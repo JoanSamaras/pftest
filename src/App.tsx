@@ -7,6 +7,6 @@ const App = () => {
       <HomePage />
     </>
   );
-}
+};
 
 export default App;

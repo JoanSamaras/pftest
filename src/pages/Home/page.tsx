@@ -7,6 +7,7 @@ import { fetchCharacters } from 'src/store/slices/characters';
 import { useAppDispatch } from 'src/hooks';
 import disneyImg from 'src/assets/images/disneyland.jpg';
 import { StyledCardMedia } from './styles';
+import EnhancedTable from './Table';
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -19,16 +20,17 @@ export const HomePage = () => {
     <>
       <Stack direction='column' spacing={2} sx={{ mb: 1 }}>
         <Card>
-          <StyledCardMedia
-            component='img'
-            alt='Disney Characters Dashboard'
-            image={disneyImg}
-          />
-          <Stack direction='row' alignItems='center' spacing={3} p={2} useFlexGap>
-            <CardContent>
-              <Typography variant='h4'>Disney Characters Dashboard (React)</Typography>
-            </CardContent>
-          </Stack>
+          <StyledCardMedia component='img' alt='Disney Characters Dashboard' image={disneyImg} />
+          <CardContent>
+            <Typography variant='h4' justifySelf={'start'}>
+              Disney Characters Dashboard (React)
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent>
+            <EnhancedTable />
+          </CardContent>
         </Card>
       </Stack>
     </>
