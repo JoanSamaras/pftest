@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+import { Character } from 'src/store/slices';
 
 type Order = 'asc' | 'desc';
 
@@ -31,7 +32,7 @@ type TableContentProps = {
   emptyRows: number;
   page: number;
   handleRequestSort: (event: MouseEvent<unknown>, property: string) => void;
-  handleClick: (event: MouseEvent<unknown>, id: number) => void;
+  handleClick: (event: MouseEvent<unknown>, row: Character) => void;
 };
 
 export type { Order, HeadCell, TableProps, TableFilterProps, TableContentProps };

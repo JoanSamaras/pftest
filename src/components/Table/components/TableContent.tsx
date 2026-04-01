@@ -28,7 +28,7 @@ export const PfTableContent = ({
             return (
               <TableRow
                 hover
-                onClick={(event) => handleClick(event, row._id)}
+                onClick={(event) => handleClick(event, row)}
                 role='checkbox'
                 tabIndex={-1}
                 key={row._id}

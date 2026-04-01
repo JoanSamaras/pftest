@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import disneyImg from 'src/assets/images/disneyland.jpg';
 import { StyledCardMedia } from './styles';
 import { PfTable } from 'src/components';
+import { CharacterModal } from 'src/components/Table/components/RowDataModal';
 
 export const HomePage = () => (
   <>
@@ -19,6 +20,7 @@ export const HomePage = () => (
       </Card>
       <Card>
         <CardContent>
+          <CharacterModal />
           <PfTable />
         </CardContent>
       </Card>

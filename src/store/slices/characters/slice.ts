@@ -20,9 +20,10 @@ export const charactersSlice = createSlice({
       })
       .addCase(fetchCharacters.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = typeof action.payload.data === 'object' && !Array.isArray(action.payload.data)
-          ? [action.payload.data]
-          : action.payload.data;
+        state.data =
+          typeof action.payload.data === 'object' && !Array.isArray(action.payload.data)
+            ? [action.payload.data]
+            : action.payload.data;
         state.info = action.payload.info;
       })
       .addCase(fetchCharacters.rejected, (state, action) => {
