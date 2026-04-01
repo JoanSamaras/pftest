@@ -9,7 +9,7 @@ import { CharacterModal } from 'src/components/Table/components/RowDataModal';
 
 export const HomePage = () => (
   <>
-    <Stack direction='column' spacing={2} sx={{ mb: 1 }}>
+    <Stack direction='column' spacing={2} sx={{ mb: 1 }} >
       <Card>
         <StyledCardMedia component='img' alt='Disney Characters Dashboard' image={disneyImg} />
         <CardContent>
