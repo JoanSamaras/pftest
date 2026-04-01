@@ -9,15 +9,20 @@ type Character = {
   enemies: string[];
 };
 
-type CharactersResponse = {
+type ResponseInfo = {
   count: number;
   totalPages: number;
   nextPage: string | null;
   previousPage: string | null;
+};
+
+type CharactersResponse = {
+  info: ResponseInfo;
   data: Character[];
 };
 
 type CharactersState = {
+  info: ResponseInfo;
   data: Character[];
   loading: boolean;
   error: string | null;

@@ -24,18 +24,22 @@ export const PfTableHead = (props: TableProps): JSX.Element => {
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.label ? order : false}
           >
-            <TableSortLabel
-              active={orderBy === headCell.label}
-              direction={orderBy === headCell.label ? order : 'asc'}
-              onClick={createSortHandler(headCell.label)}
-            >
-              {headCell.description}
-              {orderBy === headCell.label ? (
-                <Box component='span' sx={visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </Box>
-              ) : null}
-            </TableSortLabel>
+            {headCell.sortable ? (
+              <TableSortLabel
+                active={orderBy === headCell.label}
+                direction={orderBy === headCell.label ? order : 'asc'}
+                onClick={createSortHandler(headCell.label)}
+              >
+                {headCell.description}
+                {orderBy === headCell.label ? (
+                  <Box component='span' sx={visuallyHidden}>
+                    {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            ) : (
+              headCell.description
+            )}
           </TableCell>
         ))}
       </TableRow>

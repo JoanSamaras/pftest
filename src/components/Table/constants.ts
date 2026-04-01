@@ -6,6 +6,7 @@ const headCells: readonly HeadCell[] = [
     label: 'name',
     numeric: false,
     disablePadding: true,
+    sortable: true,
     description: 'Character Name',
   },
   {
@@ -13,6 +14,7 @@ const headCells: readonly HeadCell[] = [
     label: 'tvShows',
     numeric: false,
     disablePadding: false,
+    sortable: false,
     description: 'TV Shows the character has appeared in',
   },
   {
@@ -20,6 +22,7 @@ const headCells: readonly HeadCell[] = [
     label: 'videoGames',
     numeric: false,
     disablePadding: false,
+    sortable: false,
     description: 'Video Games the character has appeared in',
   },
   {
@@ -27,6 +30,7 @@ const headCells: readonly HeadCell[] = [
     label: 'alies',
     numeric: true,
     disablePadding: false,
+    sortable: false,
     description: 'Alies',
   },
   {
@@ -34,6 +38,7 @@ const headCells: readonly HeadCell[] = [
     label: 'enemies',
     numeric: true,
     disablePadding: false,
+    sortable: false,
     description: 'Enemies',
   },
 ];

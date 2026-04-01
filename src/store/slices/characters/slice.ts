@@ -3,6 +3,7 @@ import { fetchCharacters } from './api';
 import { CharactersState } from './types';
 
 const initialState: CharactersState = {
+  info: { count: 0, totalPages: 0, nextPage: null, previousPage: null },
   data: [],
   loading: false,
   error: null,
@@ -20,6 +21,7 @@ export const charactersSlice = createSlice({
       .addCase(fetchCharacters.fulfilled, (state, action) => {
         state.loading = false;
         state.data = action.payload.data;
+        state.info = action.payload.info;
       })
       .addCase(fetchCharacters.rejected, (state, action) => {
         state.loading = false;

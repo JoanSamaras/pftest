@@ -8,6 +8,7 @@ type HeadCell = {
   numeric: boolean;
   disablePadding: boolean;
   description: string;
+  sortable: boolean;
 };
 
 type TableProps = {
