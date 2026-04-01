@@ -7,7 +7,7 @@ import { fetchCharacters } from 'src/store/slices/characters';
 import { useAppDispatch } from 'src/hooks';
 import disneyImg from 'src/assets/images/disneyland.jpg';
 import { StyledCardMedia } from './styles';
-import EnhancedTable from './Table';
+import { PfTable } from 'src/components';
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -29,7 +29,7 @@ export const HomePage = () => {
         </Card>
         <Card>
           <CardContent>
-            <EnhancedTable />
+            <PfTable />
           </CardContent>
         </Card>
       </Stack>
