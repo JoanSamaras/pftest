@@ -17,14 +17,30 @@ export const fetchCharacters = createAsyncThunk(
     searchTvShow?: string;
   }) => {
     const sanitizedSearchName =
-      searchName && searchName.length > 0 ? JSON.stringify(searchName).trim().toLowerCase() : '';
+      searchName && searchName.length > 0 ? searchName.trim().toLowerCase() : '';
     const sanitizedSearchTvShow =
-      searchTvShow && searchTvShow.length > 0
-        ? JSON.stringify(searchTvShow).trim().toLowerCase()
-        : '';
+      searchTvShow && searchTvShow.length > 0 ? searchTvShow.trim().toLowerCase() : '';
+
+    let params = '';
+    if (sanitizedSearchTvShow || sanitizedSearchName) {
+      if (sanitizedSearchName) {
+        if (params.length > 0) {
+          params += '&';
+        }
+        params += `name=${sanitizedSearchName}`;
+      }
+      if (sanitizedSearchTvShow) {
+        if (params.length > 0) {
+          params += '&';
+        }
+        params += `tvShow=${sanitizedSearchTvShow}`;
+      }
+    } else {
+      params = `page=${page}&pageSize=${pageSize}`;
+    }
 
     const response = await axiosClient.get<CharactersResponse>(
-      `${endpoints.allCharacters}?page=${page}&pageSize=${pageSize}${sanitizedSearchName ? `&name=${sanitizedSearchName}` : ''}${sanitizedSearchTvShow ? `&tvShow=${sanitizedSearchTvShow}` : ''}`,
+      `${endpoints.allCharacters}?${params}`,
     );
     return response.data;
   },

@@ -18,7 +18,7 @@ type ResponseInfo = {
 
 type CharactersResponse = {
   info: ResponseInfo;
-  data: Character[];
+  data: Character | Character[];
 };
 
 type CharactersState = {
