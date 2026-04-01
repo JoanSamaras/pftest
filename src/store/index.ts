@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { charactersSlice } from './slices';
+import { charactersSlice, modalSlice } from './slices';
 
 /** Type Definitions **/
 /**********************/
@@ -12,6 +12,7 @@ type AppDispatch = typeof store.dispatch;
 export const store = configureStore({
   reducer: {
     characters: charactersSlice.reducer,
+    modal: modalSlice.reducer,
   },
 });
 

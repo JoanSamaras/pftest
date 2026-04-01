@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector, useDebounce } from 'src/hooks';
 import { PfTableContent, PfTableFilters, PfTableLoading } from './components';
 import { getComparator } from './utils';
 import { Order } from './types';
+import { Character, openModal } from 'src/store/slices';
 
 export const PfTable = (): JSX.Element => {
   const [order, setOrder] = useState<Order>('asc');
@@ -42,8 +43,8 @@ export const PfTable = (): JSX.Element => {
     setOrderBy(property);
   };
 
-  const handleClick = (event: MouseEvent<unknown>, id: number) => {
-    console.log('Row clicked with id:', id);
+  const handleClick = (event: MouseEvent<unknown>, row: Character) => {
+    dispatch(openModal(row));
   };
 
   const handleChangePage = (event: unknown, newPage: number) => {
