@@ -7,6 +7,8 @@ import { PfTableContent, PfTableFilters, PfTableLoading } from './components';
 import { getComparator } from './utils';
 import { Order } from './types';
 import { Character, openModal } from 'src/store/slices';
+import { Stack } from '@mui/material';
+import { CharactersPieChart } from '../Charts';
 
 export const PfTable = (): JSX.Element => {
   const [order, setOrder] = useState<Order>('asc');
@@ -71,39 +73,46 @@ export const PfTable = (): JSX.Element => {
   );
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <PfTableFilters
-        searchName={searchName}
-        setSearchName={setSearchName}
-        searchTvShow={searchTvShow}
-        setSearchTvShow={setSearchTvShow}
-      />
+    <Stack spacing={8} direction='row' justifyContent={'space-between'}>
+      <Box sx={{ width: '100%' }}>
+        <PfTableFilters
+          searchName={searchName}
+          setSearchName={setSearchName}
+          searchTvShow={searchTvShow}
+          setSearchTvShow={setSearchTvShow}
+        />
 
-      {loading ? (
-        <PfTableLoading />
-      ) : (
-        <>
-          <PfTableContent
-            order={order}
-            orderBy={orderBy}
-            handleRequestSort={handleRequestSort}
-            visibleRows={visibleRows}
-            handleClick={handleClick}
-            emptyRows={emptyRows}
-            page={page}
-          />
+        {loading ? (
+          <PfTableLoading />
+        ) : (
+          <>
+            <PfTableContent
+              order={order}
+              orderBy={orderBy}
+              handleRequestSort={handleRequestSort}
+              visibleRows={visibleRows}
+              handleClick={handleClick}
+              emptyRows={emptyRows}
+              page={page}
+            />
 
-          <TablePagination
-            rowsPerPageOptions={[10, 20, 50, 100, 200, 500]}
-            component='div'
-            count={paginationInfo.totalPages * rowsPerPage}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </>
-      )}
-    </Box>
+            <TablePagination
+              rowsPerPageOptions={[10, 20, 50, 100, 200, 500]}
+              component='div'
+              count={paginationInfo.totalPages * rowsPerPage}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </>
+        )}
+      </Box>
+
+      <Box sx={{ minWidth: 300, overflowX: "auto" }}>
+        <CharactersPieChart data={visibleRows} />
+      </Box>
+    </Stack>
+
   );
 };
