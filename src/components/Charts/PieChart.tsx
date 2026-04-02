@@ -12,10 +12,17 @@ type Props = {
   data: Character[];
 }
 
+type ChartPoint = {
+  name: string;
+  y: number;
+  films: string[];
+};
+
+
 /**********************/
 
 export const CharactersPieChart = ({ data }: Props): JSX.Element => {
-  const chartData = useMemo(() =>
+  const chartData: ChartPoint[] = useMemo(() =>
     data.map((char) => ({
       name: char.name,
       y: char.films.length,
@@ -32,16 +39,16 @@ export const CharactersPieChart = ({ data }: Props): JSX.Element => {
     },
     tooltip: {
       useHTML: true,
-      pointFormatter: () => {
-        const point = this as any;
+      pointFormatter: function () {
+        const point = this as Highcharts.Point & { films: string[] };
 
         return `
           <b>${point.name}</b><br/>
-          Films: ${point.y}<br/>
+          Films count: ${point.y}<br/>
           Percentage: ${point.percentage?.toFixed(2)}%<br/>
           <br/>
           <b>Film List:</b><br/>
-          ${point.films.join("<br/>")}
+          ${point.films?.length ? point.films.join("<br/>") : "No films"}
         `;
       },
     },
