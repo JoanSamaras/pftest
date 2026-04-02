@@ -1,0 +1,40 @@
+{
+  "info": {
+    "count": 3,
+    "totalPages": 1,
+    "previousPage": null,
+    "nextPage": null
+  },
+  "data": [
+    {
+      "_id": 1,
+      "name": "Mickey Mouse",
+      "imageUrl": "https://example.com/mickey.jpg",
+      "films": ["Fantasia", "Steamboat Willie"],
+      "tvShows": ["Mickey Mouse Clubhouse"],
+      "videoGames": ["Kingdom Hearts"],
+      "allies": ["Donald Duck", "Goofy"],
+      "enemies": ["Pete"]
+    },
+    {
+      "_id": 2,
+      "name": "Donald Duck",
+      "imageUrl": "https://example.com/donald.jpg",
+      "films": ["The Three Caballeros"],
+      "tvShows": ["DuckTales"],
+      "videoGames": ["Kingdom Hearts"],
+      "allies": ["Mickey Mouse"],
+      "enemies": ["Magica De Spell"]
+    },
+    {
+      "_id": 3,
+      "name": "Goofy",
+      "imageUrl": "https://example.com/goofy.jpg",
+      "films": [],
+      "tvShows": ["Goof Troop"],
+      "videoGames": ["Kingdom Hearts"],
+      "allies": ["Mickey Mouse", "Donald Duck"],
+      "enemies": []
+    }
+  ]
+}

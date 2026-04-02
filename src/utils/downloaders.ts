@@ -2,11 +2,11 @@ const exportToExcel = (data: any[]) => {
   const rows = data.map((item) => ({
     Name: item.name,
     FilmCount: item.y,
-    Films: item.films.join(" | "), // avoid commas breaking CSV
+    Films: item.films.join(' | '), // avoid commas breaking CSV
   }));
 
   // CSV header
-  const headers = Object.keys(rows[0]).join(",");
+  const headers = Object.keys(rows[0]).join(',');
 
   // CSV rows
   const csvContent = [
@@ -14,19 +14,19 @@ const exportToExcel = (data: any[]) => {
     ...rows.map((row) =>
       Object.values(row)
         .map((value) => `"${String(value).replace(/"/g, '""')}"`) // escape quotes
-        .join(",")
+        .join(','),
     ),
-  ].join("\n");
+  ].join('\n');
 
   const blob = new Blob([csvContent], {
-    type: "text/csv;charset=utf-8;",
+    type: 'text/csv;charset=utf-8;',
   });
 
   const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
+  const link = document.createElement('a');
 
   link.href = url;
-  link.setAttribute("download", "characters_chart.xlsx");
+  link.setAttribute('download', 'characters_chart.xlsx');
   document.body.appendChild(link);
   link.click();
 

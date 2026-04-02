@@ -101,7 +101,9 @@ Deliver a clean, responsive, and user-friendly dashboard that effectively visual
 
 ## Technical Notes
 
+- Checkout the main branch, open a bash and navigate to folder. Run `npm install` before you start the application.
 - How to start the application: `npm run dev`
+- How to start the unit tests: `npx cypress run` AFTER you start the application. It listens to localhost:5173. Click on E2E testing on the browser window that opens, select your preffered browser, click on the HomePage available test and the tests will start automatically.
 
 ```
 
