@@ -33,6 +33,7 @@ export const PfTableContent = ({
                 tabIndex={-1}
                 key={row._id}
                 sx={{ cursor: 'pointer' }}
+                data-testid={`character-row-${row._id}`}
               >
                 <TableCell
                   component='th'

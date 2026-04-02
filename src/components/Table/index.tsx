@@ -85,7 +85,7 @@ export const PfTable = (): JSX.Element => {
         {loading ? (
           <PfTableLoading />
         ) : (
-          <>
+          <div data-testid='characters-table'>
             <PfTableContent
               order={order}
               orderBy={orderBy}
@@ -104,15 +104,18 @@ export const PfTable = (): JSX.Element => {
               page={page}
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
+              componentsProps={{
+                previous: { "data-testid": "prev-page" },
+                next: { "data-testid": "next-page" },
+              }}
             />
-          </>
+          </div>
         )}
       </Box>
 
-      <Box sx={{ minWidth: 300, overflowX: "auto" }}>
+      <Box sx={{ minWidth: 300, overflowX: 'auto' }}>
         <CharactersPieChart data={visibleRows} />
       </Box>
     </Stack>
-
   );
 };

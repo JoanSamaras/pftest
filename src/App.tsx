@@ -1,8 +1,6 @@
 import './App.css';
 import { HomePage } from './pages/Home';
 
-const App = () => (
-  <HomePage />
-);
+const App = () => <HomePage />;
 
 export default App;
