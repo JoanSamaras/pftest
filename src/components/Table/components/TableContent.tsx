@@ -44,19 +44,6 @@ export const PfTableContent = ({
                   {row.name}
                 </TableCell>
                 <TableCell align='right' sx={{ minWidth: 150 }}>
-                  {row.films.length > 0 ? (
-                    <List dense={true}>
-                      {row.films.map((film, idx) => (
-                        <ListItem key={idx}>
-                          <ListItemText primary={film} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  ) : (
-                    row.films
-                  )}
-                </TableCell>
-                <TableCell align='right' sx={{ minWidth: 150 }}>
                   {row.tvShows.length > 0 ? (
                     <List dense={true}>
                       {row.tvShows.map((show, idx) => (
@@ -67,6 +54,19 @@ export const PfTableContent = ({
                     </List>
                   ) : (
                     row.tvShows
+                  )}
+                </TableCell>
+                <TableCell align='right' sx={{ minWidth: 150 }}>
+                  {row.videoGames.length > 0 ? (
+                    <List dense={true}>
+                      {row.videoGames.map((game, idx) => (
+                        <ListItem key={idx}>
+                          <ListItemText primary={game} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  ) : (
+                    row.videoGames
                   )}
                 </TableCell>
                 <TableCell align='right' sx={{ minWidth: 150 }}>
